@@ -143,6 +143,11 @@ class QuoteTest extends \PHPUnit_Framework_TestCase
     private $customerDataFactoryMock;
 
     /**
+     * @var \Magento\Sales\Model\OrderIncrementIdChecker|\PHPUnit_Framework_MockObject_MockObject
+     */
+    private $orderIncrementIdCheckerMock;
+
+    /**
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     protected function setUp()
@@ -285,6 +290,14 @@ class QuoteTest extends \PHPUnit_Framework_TestCase
             '',
             false
         );
+        $this->orderIncrementIdCheckerMock = $this->getMock(
+            \Magento\Sales\Model\OrderIncrementIdChecker::class,
+            ['isIncrementIdUsed'],
+            [],
+            '',
+            false
+        );
+
         $this->quote = (new ObjectManager($this))
             ->getObject(
                 \Magento\Quote\Model\Quote::class,
@@ -307,7 +320,11 @@ class QuoteTest extends \PHPUnit_Framework_TestCase
                     'customerRepository' => $this->customerRepositoryMock,
                     'objectCopyService' => $this->objectCopyServiceMock,
                     'extensionAttributesJoinProcessor' => $this->extensionAttributesJoinProcessorMock,
-                    'customerDataFactory' => $this->customerDataFactoryMock
+                    'customerDataFactory' => $this->customerDataFactoryMock,
+                    'data' => [
+                        'reserved_order_id' => 1000001
+                    ],
+                    'orderIncrementIdChecker' => $this->orderIncrementIdCheckerMock,
                 ]
             );
     }
@@ -1232,5 +1249,40 @@ class QuoteTest extends \PHPUnit_Framework_TestCase
         $this->quote->setData('items_collection', $items);
 
         $this->assertEquals($itemResult, $this->quote->getAllItems());
+    }
+
+    /**
+     * Test to verify if existing reserved_order_id in use
+     *
+     * @param bool $isReservedOrderIdExist
+     * @param int $reservedOrderId
+     * @dataProvider reservedOrderIdDataProvider
+     */
+    public function testReserveOrderId($isReservedOrderIdExist, $reservedOrderId)
+    {
+        $this->orderIncrementIdCheckerMock
+            ->expects($this->once())
+            ->method('isIncrementIdUsed')
+            ->with(1000001)
+            ->willReturn($isReservedOrderIdExist);
+        $this->resourceMock
+            ->expects($this->any())
+            ->method('getReservedOrderId')
+            ->willReturn($reservedOrderId);
+        $this->quote->reserveOrderId();
+        $this->assertEquals($reservedOrderId, $this->quote->getReservedOrderId());
+    }
+
+    /**
+     * DataProvider for reservedId test
+     *
+     * @return array
+     */
+    public function reservedOrderIdDataProvider()
+    {
+        return [
+            'id_already_in_use' => [true, 100002],
+            'id_not_in_use' => [false, 1000001]
+        ];
     }
 }
