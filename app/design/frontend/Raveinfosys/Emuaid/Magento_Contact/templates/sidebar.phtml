@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="contact_form_social">
+<div class="address">
+	<span>Speer Laboratories</span>
+		5821 N. Andrews Way<br>
+		Ft Lauderdale, FL 33309<br>
+		800-881-3900
+</div>
+
+<div>
+	<?php //include ($block->getTemplateFile('Techbandhu_Fbpage::fbpage.phtml')) ?>
+	<?php echo $this->getLayout()->createBlock("Techbandhu\Fbpage\Block\Fbpage")->setTemplate("Techbandhu_Fbpage::fbpage.phtml")->toHtml();?>
+</div>
+
+</div>

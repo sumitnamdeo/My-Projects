@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_allow_guest">
+        <observer name="subscriptions_guest_checkout_is_available" instance="ParadoxLabs\Subscriptions\Observer\GuestCheckoutAvailableObserver" shared="true" />
+    </event>
+</config>

@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<script type="text/javascript">
+    // <![CDATA[
+    require([
+            "MageWorx_OrderEditor/js/order/edit/form/items",
+            "MageWorx_OrderEditor/js/order/edit/form/address/billing",
+            "MageWorx_OrderEditor/js/order/edit/form/address/shipping",
+            "MageWorx_OrderEditor/js/order/edit/form/shipping",
+            "prototype"
+        ],
+        function(
+            mageworxOrderEditorItems,
+            mageworxOrderEditorAddressShipping,
+            mageworxOrderEditorAddressBilling,
+            mageworxOrderEditorShipping
+        ) {
+
+            var mageworxOrderEditorItems = new mageworxOrderEditorItems();
+            mageworxOrderEditorItems.init(<?php echo $block->getJsonParamsItems(); ?>);
+
+            var mageworxOrderEditorAddressBilling = new mageworxOrderEditorAddressBilling();
+            mageworxOrderEditorAddressBilling.init(<?php echo $this->getJsonParamsAddress(); ?>);
+
+            var mageworxOrderEditorAddressShipping = new mageworxOrderEditorAddressShipping();
+            mageworxOrderEditorAddressShipping.init(<?php echo $this->getJsonParamsAddress(); ?>);
+
+            var mageworxOrderEditorShipping = new mageworxOrderEditorShipping();
+            mageworxOrderEditorShipping.init(<?php echo $this->getJsonParamsShipping(); ?>);
+        }
+    );
+    // ]]>
+</script>

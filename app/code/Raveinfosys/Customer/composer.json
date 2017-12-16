@@ -1,0 +1,17 @@
+{
+    "name": "raveinfosys/customer",
+    "description": "Raveinfosys Customer",
+    "type": "magento2-module",
+    "version": "2.0.0",
+    "license": [
+        "OSL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Raveinfosys/Customer"
+            ]
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <gridactions>
+            <general>
+                <actions>all</actions>
+                <do_capture>1</do_capture>
+                <set_paid>1</set_paid>
+                <add_trackingnumber_from_grid_shipped>0</add_trackingnumber_from_grid_shipped>
+            </general>
+        </gridactions>
+    </default>
+</config>
+<!--
+/**
+ * Product:       Xtento_GridActions (2.1.3)
+ * ID:            489IGa+AykquMGJiZLdykETDn+04hOSECySDC/W1vyw=
+ * Packaged:      2017-10-09T14:42:15+00:00
+ * Last Modified: 2016-06-01T14:27:32+00:00
+ * File:          app/code/Xtento/GridActions/etc/config.xml
+ * Copyright:     Copyright (c) 2017 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

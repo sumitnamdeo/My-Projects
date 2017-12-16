@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Framework\View\Element\Template */
+?>
+<script type='text/javascript'>
+    var addthis_product = 'mag-sp-2.0.0';
+    var addthis_config = {
+        pubid: 'xa-525fbbd6215b4f1a'
+    }
+</script>
+<strong>Share : </strong>
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style" >
+	<a class="addthis_button_preferred_1"></a>
+	<a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_preferred_7"></a>
+	<a class="addthis_button_preferred_4"></a>
+	<a class="addthis_button_preferred_3"></a>
+    <!--<a class="addthis_button_compact"></a>
+	<a class="addthis_counter addthis_bubble_style"></a> -->
+</div>
+
+<script>
+    var ats_widget = function () {
+        if (typeof addthis_conf == 'undefined') {
+            var at_script = document.createElement('script');
+            at_script.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-525fbbd6215b4f1a';
+            document.getElementsByTagName('head')[0].appendChild(at_script);
+            var addthis_product = 'mag-sp-2.1.0';
+        }
+    };
+    if (window.addEventListener)
+        window.addEventListener('load', ats_widget);
+    else
+        window.attachEvent('onload', ats_widget);
+</script>
+

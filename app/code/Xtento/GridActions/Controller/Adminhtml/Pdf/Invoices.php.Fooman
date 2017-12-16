@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * Product:       Xtento_GridActions (2.1.3)
+ * ID:            489IGa+AykquMGJiZLdykETDn+04hOSECySDC/W1vyw=
+ * Packaged:      2017-10-09T14:42:15+00:00
+ * Last Modified: 2017-01-26T13:37:42+00:00
+ * File:          app/code/Xtento/GridActions/Controller/Adminhtml/Pdf/Invoices.php.Fooman
+ * Copyright:     Copyright (c) 2017 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+
+/** InvoicesController if Fooman PDFCustomizer is installed */
+
+namespace Xtento\GridActions\Controller\Adminhtml\Pdf;
+
+use Magento\Sales\Model\ResourceModel\Order\Invoice\CollectionFactory;
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+
+/**
+ * Handling print actions
+ *
+ * @package Xtento\GridActions\Controller\Adminhtml\Pdf
+ */
+class Invoices extends \Fooman\PdfCustomiser\Controller\Adminhtml\AbstractMassPdf
+{
+    /**
+     * @var \Fooman\PdfCustomiser\Block\InvoiceFactory
+     */
+    protected $invoiceDocumentFactory;
+
+    /**
+     * @param \Magento\Backend\App\Action\Context                                $context
+     * @param \Magento\Ui\Component\MassAction\Filter                            $filter
+     * @param \Fooman\PdfCore\Model\Response\Http\FileFactory                    $fileFactory
+     * @param \Fooman\PdfCore\Model\PdfRenderer                                  $pdfRenderer
+     * @param \Fooman\PdfCustomiser\Block\InvoiceFactory                         $invoiceDocumentFactory
+     * @param \Magento\Sales\Model\ResourceModel\Order\Invoice\CollectionFactory $invoiceCollectionFactory
+     */
+    public function __construct(
+        \Magento\Backend\App\Action\Context $context,
+        \Magento\Ui\Component\MassAction\Filter $filter,
+        \Fooman\PdfCore\Model\Response\Http\FileFactory $fileFactory,
+        \Fooman\PdfCore\Model\PdfRenderer $pdfRenderer,
+        \Fooman\PdfCustomiser\Block\InvoiceFactory $invoiceDocumentFactory,
+        \Xtento\GridActions\Ui\Component\MassAction\CustomFilter $customFilter,
+        \Magento\Sales\Model\ResourceModel\Order\Invoice\CollectionFactory $invoiceCollectionFactory
+    ) {
+        $this->invoiceDocumentFactory = $invoiceDocumentFactory;
+        $this->collectionFactory = $invoiceCollectionFactory;
+        parent::__construct($context, $customFilter, $fileFactory, $pdfRenderer);
+    }
+
+    /**
+     * @return bool
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Magento_Sales::sales_invoice');
+    }
+
+    /**
+     * Print selected invoices
+     *
+     * @param AbstractCollection $collection
+     *
+     * @return void
+     */
+    protected function processCollection(AbstractCollection $collection)
+    {
+        foreach ($collection->getItems() as $invoice) {
+            $document = $this->invoiceDocumentFactory->create(
+                ['data' => ['invoice' => $invoice]]
+            );
+
+            $this->pdfRenderer->addDocument($document);
+        }
+    }
+}

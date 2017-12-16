@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+       	<referenceBlock name="catalog.compare.sidebar" remove="true" />
+		<referenceBlock name="footer_links" remove="true"/>
+		<referenceBlock name="form.subscribe" remove="true"/>
+		<move element="top.search" destination="header.links" after="top.links"/>
+		<!-- <referenceBlock name="catalog.topnav" remove="true"/>   -->
+		<referenceBlock name="header" remove="true"/>
+		<referenceBlock name="breadcrumbs" remove="true"/>
+		<referenceBlock name="copyright" remove="true"/> 
+		
+		 <referenceContainer name="main">
+		 	 <container name="content.top" label="Main Content Top" before="-"/>
+        </referenceContainer>
+		
+		<referenceContainer name="header.panel.wrapper" htmlClass="panel wrapper clearfix" />
+		<referenceContainer name="header.panel" htmlClass="panel header clearfix" />
+		
+		<referenceContainer name="footer-container">
+			<block class="Magento\Framework\View\Element\Template" name="main_footer" as="main_footer" template="Magento_Theme::main_footer.phtml"/>
+		</referenceContainer>
+		<referenceContainer name="store.menu" >
+ 		 <block class="Magento\Cms\Block\Block" name="Top Menu">
+					<arguments>
+						<argument name="block_id" xsi:type="string">top_menu</argument>
+					</arguments>
+		</block>   
+		</referenceContainer> 
+		<referenceContainer name="header-wrapper" after="logo">
+		<block class="Magento\Cms\Block\Block" name="Header Contact Info">
+					<arguments>
+						<argument name="block_id" xsi:type="string">header_contact_info</argument>
+					</arguments>
+			</block>
+		</referenceContainer>
+		<referenceContainer name="header.panel">
+		<block class="Magento\Cms\Block\Block" name="Free Standard Shipping">
+					<arguments>
+						<argument name="block_id" xsi:type="string">free_standard_shipping </argument>
+					</arguments>
+			</block>
+		</referenceContainer>	
+		
+	</body>
+</page>

@@ -1,0 +1,8 @@
+{
+    "name": "mageworx/module-ordermanagementmeta",
+    "version": "2.2.1",
+    "type": "metapackage",
+    "require": {
+        "mageworx/module-ordereditor": "2.2.1"
+    }
+}

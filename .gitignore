@@ -1,0 +1,48 @@
+# Mac
+.DS_Store
+
+# PhpStorm
+/.idea/
+
+# Eclipse
+/.project
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Log files
+*.log
+
+# Quick-File backups
+*.bak
+*.backup
+
+# Magento ignore
+/.htaccess
+/app/etc/env.php
+/orders/
+/protected/
+
+#  Ignore everything /var dir except /var/package dir
+/var/*
+!/var/package/
+
+#  Ignore everything /pub dir except /pub/media dir
+/pub/*
+!/pub/media/

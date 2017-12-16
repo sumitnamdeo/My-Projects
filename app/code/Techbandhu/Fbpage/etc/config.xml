@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author TechBandhu
+ * @copyright Copyright (c) 2016 TechBandhu (http://www.TechBandhu.com)
+ * @package Techbandhu_Fbpage
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <fbpage>
+            <general>
+                <active>1</active>
+                <tabs>timeline</tabs>
+                <box_width>240</box_width>
+                <box_height>400</box_height>
+                <is_small_header>0</is_small_header>
+                <hide_cover_photo>0</hide_cover_photo>
+                <adapt_width>0</adapt_width>
+                <show_face>1</show_face>
+                <viewon>footer</viewon>
+            </general>
+        </fbpage>
+    </default>
+</config>

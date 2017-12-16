@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author TechBandhu
+ * @copyright Copyright (c) 2016 TechBandhu (http://www.TechBandhu.com)
+ * @package Techbandhu_Fbpage
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+	<referenceBlock name="fbpage_sidebar" remove="true"/>
+</body>
+</page>

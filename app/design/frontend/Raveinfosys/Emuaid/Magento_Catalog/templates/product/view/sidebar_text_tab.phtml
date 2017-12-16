@@ -1,0 +1,10 @@
+<?php $_product = $block->getProduct();
+	$block_name=trim($_product->getData('sidebar_block_data'));
+	$block_name=(explode(',',$block_name));
+            for($x = 0; $x < count($block_name); $x++) {
+		echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("$block_name[$x]")->toHtml();
+            } 
+?>
+
+
+

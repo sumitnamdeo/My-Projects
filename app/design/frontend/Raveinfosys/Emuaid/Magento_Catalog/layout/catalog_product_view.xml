@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+	<body>
+		<referenceBlock name="catalog.compare.sidebar" remove="true" />
+		<referenceContainer name="wishlist_sidebar" remove="true" />
+		<referenceBlock name="product.attributes" remove="true" /> 
+		<referenceBlock name="product.info.addto" remove="true" />
+		<referenceBlock name="product.info.mailto" remove="true" />
+		<move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
+		<move element="product.info.stock.sku" destination="product.info.price" before="product.price.final"/>
+		<referenceBlock name="product.info.sku" remove="true"/> 
+		<referenceContainer name="sidebar.additional">
+				<block class="Magento\Catalog\Block\Product\View" name="demo.tab" template="Magento_Catalog::product/view/sidebar_text_tab.phtml" />
+		</referenceContainer> 
+
+			
+	   <referenceBlock name="product.info.details">
+               <referenceBlock name="product.info.description">
+				<arguments>
+					<argument name="title" translate="true" xsi:type="string">Description</argument>
+				<argument name="priority" xsi:type="string">1</argument>
+                                </arguments>
+		</referenceBlock>
+             <block class="Magento\Catalog\Block\Product\View\Description" name="Ingredients.tab" template="product/view/attribute.phtml" before="reviews.tab" group="detailed_info">
+                <arguments>
+			<argument name="at_call" xsi:type="string">getIngredients</argument>
+                        <argument name="at_code" xsi:type="string">ingredients</argument>
+                        <argument name="css_class" xsi:type="string">ingredients</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>       
+                        <argument translate="true" name="title" xsi:type="string">Ingredients</argument>
+                         <argument name="priority" xsi:type="string">2</argument>
+                </arguments>
+            </block>
+			<block class="Magento\Catalog\Block\Product\View\Description" name="HowToUse.tab" template="product/view/attribute.phtml" before="reviews.tab" group="detailed_info">
+                <arguments>
+						<argument name="at_call" xsi:type="string">getHowToUse</argument>
+                        <argument name="at_code" xsi:type="string">howtouse</argument>
+                        <argument name="css_class" xsi:type="string">howtouse</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>       
+			<argument translate="true" name="title" xsi:type="string">How To Use</argument>
+                        <argument name="priority" xsi:type="string">3</argument>
+                </arguments>
+            </block>
+			<block class="Magento\Catalog\Block\Product\View\Description" name="Guarantee.tab" template="product/view/attribute.phtml" before="reviews.tab" group="detailed_info">
+                <arguments>
+						<argument name="at_call" xsi:type="string">getGuarantee</argument>
+                        <argument name="at_code" xsi:type="string">guarantee</argument>
+                        <argument name="css_class" xsi:type="string">guarantee</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>       
+			<argument translate="true" name="title" xsi:type="string">Guarantee</argument>
+                        <argument name="priority" xsi:type="string">4</argument>
+                </arguments>
+            </block>
+		<referenceBlock name="reviews.tab">
+			<arguments>
+				<argument name="priority" xsi:type="string">5</argument>
+			</arguments>
+		</referenceBlock>	
+			
+        </referenceBlock>
+		 <referenceBlock name="product.info.addtocart.additional">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Catalog::product/view/addtocart.phtml</argument>
+            </action>
+        </referenceBlock>
+
+    </body>
+</page>

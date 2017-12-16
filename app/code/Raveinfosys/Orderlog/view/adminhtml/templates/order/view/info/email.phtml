@@ -1,0 +1,33 @@
+
+<?php /** @var $block \MageVision\UpdateOrderEmailAddress\Block\Adminhtml\Order\View\Info\Email */ ?>
+<?php $_order = $block->getOrder() ?>
+<div id="order-account-information-email">
+    <div id="edit_email">
+        <a href="mailto:<?php echo $block->escapeHtml($_order->getCustomerEmail()) ?>">
+            <?php echo $block->escapeHtml($_order->getCustomerEmail()) ?>
+        </a>
+        <?php echo $block->getChildHtml('edit_button') ?>
+    </div>
+    <div id="update_email">
+        <input type="text" class="admin__control-text" name="order_email" 
+               value="<?php echo $block->escapeHtml($_order->getCustomerEmail()) ?>" id="order_email">
+        <?php echo $block->getChildHtml('update_button') ?>
+    </div>
+</div>
+<script>
+require(['prototype'], function () {
+//<![CDATA[
+    $('update_email').hide();
+    /**
+     * Show update email content
+     */
+    function showUpdatetEmailContent() {
+        $('edit_email').hide();
+        $('update_email').show();
+    }
+    window.showUpdatetEmailContent = showUpdatetEmailContent;
+//]]>
+location.reload();
+});
+
+</script>

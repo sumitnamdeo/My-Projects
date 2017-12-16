@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<?php $order = $block->getOrder(); ?>
+<?php $hasDiscount = $block->hasDiscount(); ?>
+<?php /** @var $block \MageWorx\OrderEditor\Block\Adminhtml\Sales\Order\Edit\Totals */ ?>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-totals">
+            <legend class="admin__legend">
+                <span><?php echo $block->escapeHtml(__('New Totals')) ?></span>
+            </legend>
+            <br>
+            <table class="admin__table-secondary data-table new-totals"> <tr class=" row-totals"="">
+                <tbody>
+                    <?php foreach ($block->getTotals() as $total) : ?>
+                        <?php if (!$hasDiscount && $total->getCode() == 'grand_total') : ?>
+                            <tr>
+                                <td class="admin__total-mark" style="" colspan="1"><?php echo __('Discount') ?></td>
+                                <td id="ordereditor-new-total-discount" class="admin__total-amount" style="">
+                                    <span class="price"><?php echo $block->formatPrice(0) ?></span>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                        <tr>
+                            <td class="admin__total-mark" style="" colspan="1"><?php echo $total->getTitle() ?></td>
+                            <td id="ordereditor-new-total-<?php echo $total->getCode() ?>" class="admin__total-amount" style="">
+                                <span class="price"><?php echo $block->format($total->getValue()) ?></span>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <input type="hidden" id="ordereditor-subtotal-amount" value="<?php echo $order->getSubtotal() ?>" />
+            <input type="hidden" id="ordereditor-subtotal-tax-amount" value="<?php echo $block->getSubtotalTaxAmount() ?>" />
+            <input type="hidden" id="ordereditor-shipping-amount" value="<?php echo $order->getShippingAmount() ?>" />
+            <input type="hidden" id="ordereditor-shipping-tax-amount" value="<?php echo $order->getShippingTaxAmount() ?>" />
+            <input type="hidden" id="ordereditor-discount-amount" value="<?php echo $order->getDiscountAmount() ?>" />
+            <input type="hidden" id="ordereditor-discount-tax-compensation-amount" value="<?php echo $order->getDiscountTaxCompensationAmount() ?>" />
+        </div>
+    </div>

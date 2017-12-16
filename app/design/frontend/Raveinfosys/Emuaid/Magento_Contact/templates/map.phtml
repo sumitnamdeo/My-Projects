@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+       function initMap() {
+		   var labels = 'Speer Laboratories';
+			
+        var uluru = {lat: 26.197898, lng: -80.150352};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+          var marker = new google.maps.Marker({
+          position: uluru,
+		  label:labels,
+          map: map
+        }); 
+		
+		 var iw = new google.maps.InfoWindow({
+        content: "<b>Speer Laboratories</b> <br/> 5821 N. Andrews Way Ft Lauderdale, FL 33309 800-881-3900"
+		}); 
+		
+		iw.open(map, marker);
+      } 
+	  
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN-7nICN4HM6Vkb1filOtaFAJmOLIhTUI&callback=initMap">
+    </script>
+
+  </body>
+</html>

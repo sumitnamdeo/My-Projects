@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author TechBandhu
+ * @copyright Copyright (c) 2016 TechBandhu (http://www.TechBandhu.com)
+ * @package Techbandhu_Fbpage
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="techbandhu" translate="label" sortOrder="200">
+            <label>Techbandhu</label>
+        </tab>
+        <section id="fbpage" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Facebook Page Plugin</label>
+            <tab>techbandhu</tab>
+            <resource>Techbandhu_Fbpage::config_fbpage</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>General Configuration</label>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Active</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="page_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Facebook Page URL</label>
+                </field>
+                <field id="tabs" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Api Type</label>
+                    <source_model>Techbandhu\Fbpage\Model\Source\Fbtabs</source_model>
+                </field>
+                <field id="box_width" translate="label" type="text" sortOrder="3" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Page Width</label>
+                    <comment>The pixel width of the embed (Min. 180 to Max. 500).</comment>
+                </field>
+                <field id="box_height" translate="label" type="text" sortOrder="4" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Facebook Page Height</label>
+                    <comment>The pixel height of the embed (Min. 70).</comment>
+                </field>
+                <field id="is_small_header" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Small Header</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_cover_photo" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide Cover Photo</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="adapt_width" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Adapt to plugin container width</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_face" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Friend's Faces</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="viewon" translate="label" type="multiselect" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>View Facebook page on</label>
+                    <source_model>Techbandhu\Fbpage\Model\Source\Viewon</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+    <scope id="global">
+        <fieldset id="sales_convert_order_customer">
+            <field name="customer_id">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_is_guest">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_group_id">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_dob">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_email">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_firstname">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_lastname">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_middlename">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_prefix">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_suffix">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_taxvat">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_note">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_gender">
+                <aspect name="to_quote" />
+            </field>
+        </fieldset>
+        <fieldset id="sales_convert_quote_customer">
+            <field name="customer_id">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_is_guest">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_group_id">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_dob">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_email">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_firstname">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_lastname">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_middlename">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_prefix">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_suffix">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_taxvat">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_note">
+                <aspect name="to_quote" />
+            </field>
+            <field name="customer_gender">
+                <aspect name="to_quote" />
+            </field>
+        </fieldset>
+        <fieldset id="sales_convert_customer_address">
+            <field name="id">
+                <aspect name="to_quote_address" targetField="customer_address_id" />
+            </field>
+            <field name="customer_id">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="prefix">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="firstname">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="middlename">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="lastname">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="suffix">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="company">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="street">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="city">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="region">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="region_id">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="postcode">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="country_id">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="telephone">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="fax">
+                <aspect name="to_quote_address" />
+            </field>
+        </fieldset>
+    </scope>
+</config>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+		<css src="css/custom.css" />		
+		<link src="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700" src_type="url" /> 
+		<link src="https://fonts.googleapis.com/css?family=Fugaz+One" src_type="url" /> 
+		<link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
+		
+		 <!-- Owl Carousel Assets -->
+		 <css src="css/owl.carousel.css" />	
+		 <css src="css/owl.theme.css" />
+		 <script src="js/jquery-1.9.1.min.js"></script> 
+		 <!-- <script src="http://127.0.0.1/emuaid-staging/pub/static/frontend/Raveinfosys/Emuaid/en_US/Magento_Theme/js/1367.js" src_type="url"/> -->
+		 <script src="js/owl.carousel.js"></script>
+		 <script src="js/owl_page.js"></script>
+		 <script src="js/jquery.cycle.all.js"></script>		 
+		 <!-- <script src="https://github.com/malsup/cycle/blob/master/jquery.cycle.all.js" src_type="url"></script> -->
+    </head>
+</page>
+
+

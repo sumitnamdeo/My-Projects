@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <subscriptions>
+            <general>
+                <version backend_model="ParadoxLabs\Subscriptions\Model\Config\Version" />
+                <active>1</active>
+                <billing_active>1</billing_active>
+                <allow_customer_pause>1</allow_customer_pause>
+                <allow_customer_cancel>1</allow_customer_cancel>
+                <group_same_day>1</group_same_day>
+                <always_add_custom_option>0</always_add_custom_option>
+                <option_label>Subscription</option_label>
+            </general>
+            <billing_failed>
+                <active>1</active>
+                <identity>general</identity>
+                <receiver>general</receiver>
+                <template>subscriptions_billing_failed_template</template>
+            </billing_failed>
+            <payment_failed>
+                <active>1</active>
+                <identity>general</identity>
+                <template>subscriptions_payment_failed_template</template>
+            </payment_failed>
+        </subscriptions>
+    </default>
+</config>

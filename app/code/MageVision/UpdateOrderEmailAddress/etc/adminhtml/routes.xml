@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageVision Update Order Email Address Extension
+ *
+ * @category     MageVision
+ * @package      MageVision_UpdateOrderEmailAddress
+ * @author       MageVision Team
+ * @copyright    Copyright (c) 2016 MageVision (http://www.magevision.com)
+ * @license      LICENSE_MV.txt or http://www.magevision.com/license-agreement/
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="uoea" frontName="uoea">
+            <module name="MageVision_UpdateOrderEmailAddress" before="Magento_Backend" />
+        </route>
+    </router>
+</config>

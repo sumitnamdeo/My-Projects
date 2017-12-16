@@ -1,0 +1,51 @@
+Xtento_GridActions
+
+-------------
+  CHANGELOG
+-------------
+
+===== 2.0.0 =====
+ * Initial stable M2 release
+
+===== 2.0.1 =====
+ * Established compatibility with Magento 2.0.2, shipment creation logic was fixed
+ * Updated Xtento_XtCore
+
+===== 2.0.2 =====
+ * Updated Xtento_XtCore to 2.0.3
+
+===== 2.0.3 =====
+ * Fixed bug (Registry key "current_shipment" already exists) that could happen when creating multiple shipments at the same time
+
+===== 2.0.4 =====
+ * Fixed shipment creation logic that sometimes lead to the shipment being created, but the order itself not reflecting "Qty Shipped"
+ * Fixed carrier input on Sales > Orders grid which opened order upon trying to enter a tracking number on the grid
+
+===== 2.0.5 =====
+ * Compatibility with Magento 2.1.0 established
+
+===== 2.0.6 =====
+ * Updated composer.json to require XTENTO "XtCore" base module
+
+===== 2.0.7 =====
+ * Fixed "Set order status to X after invoicing/completing/shipping" function, which threw error "Please make sure you set a valid custom order status..." before
+
+===== 2.0.8 =====
+ + Added support for Fooman PDFCustomizer invoice/packingslip PDFs
+ * Refactored PDF controllers to use abstract Magento core PDF controllers
+
+===== 2.0.9 =====
+ * Fixed mass actions; if a filter was used on a grid (and also sometimes in combination with "select all") then eventually all orders/none were exported
+
+===== 2.1.0 =====
+ * Fixed "print invoice" mass action functionality that returned wrong invoices in some cases
+
+===== 2.1.1 =====
+ * Updated Xtento_XtCore to version 2.0.7 ("Added warning in module configuration at System > Configuration if module output is disabled via "Disable Module Output" at System > Configuration > Advanced > Advanced")
+
+===== 2.1.2 =====
+ * Fixed issue for Magento version >=2.1.3 where PDF invoices couldn't be printed
+ * Updated Xtento_XtCore to version 2.0.8
+
+===== 2.1.3 =====
+ + Compatibility with Magento 2.2 established

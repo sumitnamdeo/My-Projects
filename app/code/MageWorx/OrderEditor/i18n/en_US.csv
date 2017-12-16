@@ -1,0 +1,81 @@
+Submit,Submit
+Cancel,Cancel
+"Add Products","Add Products"
+"Add Selected Product(s) to Order","Add Selected Product(s) to Order"
+Configure,Configure
+"The order changes have been canceled","The order changes have been canceled"
+"The order changes have been saved","The order changes have been saved"
+"'An error occured while saving the order' .","'An error occured while saving the order' ."
+"Order item id is not received.","Order item id is not received."
+"Quote item is not loaded.","Quote item is not loaded."
+"Order item is not loaded.","Order item is not loaded."
+"Quote item id is not received.","Quote item id is not received."
+"Create new invoice (if possible)","Create new invoice (if possible)"
+"Delete invoices and credit memos, create new invoice instead","Delete invoices and credit memos, create new invoice instead"
+"Do not touch","Do not touch"
+"Add new shipment","Add new shipment"
+"Delete shipment(s) and create new","Delete shipment(s) and create new"
+"Not all selected products were added to the order as some products are currently unavailable.","Not all selected products were added to the order as some products are currently unavailable."
+"An issue occurred when trying to add product ID %1 to the order.","An issue occurred when trying to add product ID %1 to the order."
+"This is the wrong quote item id to update configuration.","This is the wrong quote item id to update configuration."
+"We found an invalid request for adding product to quote.","We found an invalid request for adding product to quote."
+Product,Product
+"Item Status","Item Status"
+"Original Price","Original Price"
+Price,Price
+Qty,Qty
+Subtotal,Subtotal
+"Tax Amount","Tax Amount"
+"Tax Percent","Tax Percent"
+"Discount Amount","Discount Amount"
+"Row Total","Row Total"
+"Changing address information will not recalculate tax.","Changing address information will not recalculate tax."
+Tax,Tax
+Discount,Discount
+Action,Action
+"No ordered items","No ordered items"
+SKU,SKU
+New,New
+Excl.Tax:,Excl.Tax:
+"Price excl tax","Price excl tax"
+Incl.Tax:,Incl.Tax:
+"Price incl. tax","Price incl. tax"
+Ordered,Ordered
+Invoiced,Invoiced
+Refunded,Refunded
+Shipped,Shipped
+Canceled,Canceled
+Excl.Tax,Excl.Tax
+"Subtotal excl. tax","Subtotal excl. tax"
+Incl.Tax,Incl.Tax
+"Subtotal incl. tax","Subtotal incl. tax"
+Amount,Amount
+"Tax amount","Tax amount"
+"Discount amount","Discount amount"
+Total,Total
+"Please select","Please select"
+Remove,Remove
+Percent,Percent
+"Tax percent","Tax percent"
+"Discount percent","Discount percent"
+"Back to stock","Back to stock"
+"Incl. Tax","Incl. Tax"
+"Excl. Tax","Excl. Tax"
+"Price Excl. Tax","Price Excl. Tax"
+"Price Incl. Tax","Price Incl. Tax"
+"Sorry, no quotes are available for this order.","Sorry, no quotes are available for this order."
+"You do not need to select a shipping method.","You do not need to select a shipping method."
+"New Totals","New Totals"
+Thumbnail,Thumbnail
+"Something goes wrong","Something goes wrong"
+"Sorry, but you can not delete all items in order. Maybe, better remove this order?","Sorry, but you can not delete all items in order. Maybe, better remove this order?"
+"Warning! Requested quantity for some items are not available. Please, recheck or update changes.","Warning! Requested quantity for some items are not available. Please, recheck or update changes."
+"Order Management Extensions","Order Management Extensions"
+"Order Editor","Order Editor"
+"Invoices / Shipments / Credit Memos","Invoices / Shipments / Credit Memos"
+"Update Invoices/Credit Memos","Update Invoices/Credit Memos"
+"Update Shipments","Update Shipments"
+"Order Items","Order Items"
+"Return Item To Stock","Return Item To Stock"
+Shipping,Shipping
+"Recalculate Shipping Amount Automatically","Recalculate Shipping Amount Automatically"

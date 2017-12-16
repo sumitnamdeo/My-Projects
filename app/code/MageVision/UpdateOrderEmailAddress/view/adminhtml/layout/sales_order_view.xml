@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageVision Update Order Email Address Extension
+ *
+ * @category     MageVision
+ * @package      MageVision_UpdateOrderEmailAddress
+ * @author       MageVision Team
+ * @copyright    Copyright (c) 2016 MageVision (http://www.magevision.com)
+ * @license      LICENSE_MV.txt or http://www.magevision.com/license-agreement/
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <referenceBlock name="sales_order_tabs">
+                <referenceBlock name="order_tab_info">
+                    <block class="Magento\Sales\Block\Adminhtml\Order\View\Info" name="order_info" template="MageVision_UpdateOrderEmailAddress::order/view/info.phtml">
+                        <block class="MageVision\UpdateOrderEmailAddress\Block\Adminhtml\Order\View\Info\Email" name="order_info_email" template="MageVision_UpdateOrderEmailAddress::order/view/info/email.phtml" />
+                    </block>
+                </referenceBlock>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
