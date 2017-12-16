@@ -45,7 +45,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\VersionContro
      */
     public function setQuoteFilter($quoteId)
     {
-        //echo $quoteId;die('helo');
         $this->addFieldToFilter('quote_id', $quoteId ? $quoteId : ['null' => 1]);
         return $this;
     }

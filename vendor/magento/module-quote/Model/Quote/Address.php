@@ -461,7 +461,6 @@ class Address extends \Magento\Customer\Model\Address\AbstractAddress implements
     public function getQuote()
     {
         return $this->_quote;
-
     }
 
     /**
